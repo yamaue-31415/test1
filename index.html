@@ -2,15 +2,19 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テストサイト</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        h1 { color: blue; }
-    </style>
+    <title>パスワード保護ページ</title>
+    <script>
+        function checkPassword() {
+            let password = prompt("パスワードを入力してください:");
+            if (password !== "secret123") {
+                alert("パスワードが違います。");
+                window.location.href = "https://www.google.com"; // 別のページにリダイレクト
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>GitHub Pagesで公開！</h1>
-    <p>これはテストサイトです。</p>
+<body onload="checkPassword()">
+    <h1>秘密のページ</h1>
+    <p>ここはパスワードを知っている人だけが見られます。</p>
 </body>
 </html>
